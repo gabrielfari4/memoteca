@@ -7,6 +7,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const formulario = document.getElementById('pensamento-form');
     formulario.addEventListener('submit', submissaoFormulario)
 
+    const cancelar = document.getElementById('botao-cancelar');
+    cancelar.addEventListener('click', ui.limparFormulario)
+
 });
 
 const submissaoFormulario = async (event) => {
@@ -22,3 +25,4 @@ const submissaoFormulario = async (event) => {
         alert("Ocorreu erro ao salvar pensamentos.")
     }
 }
+

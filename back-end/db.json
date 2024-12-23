@@ -72,13 +72,18 @@
     },
     {
       "id": "9d01",
-      "conteudo": "          Há semanas em que décadas acontecem",
+      "conteudo": "Há semanas em que décadas acontecem",
       "autoria": "Lênin"
     },
     {
       "id": "0eff",
       "conteudo": "A ideologia dominante de um tempo é a ideologia da classe dominante desse tempo",
       "autoria": "Marx"
+    },
+    {
+      "id": "dcf8",
+      "conteudo": "Você tem o meu machado",
+      "autoria": "Gimli"
     }
   ]
 }
