@@ -1,8 +1,15 @@
 import api from "./api.js";
 
 const ui = {
+
+    async preencherFormulario(pensamentoId) {
+        const pensamento = await api.buscarPensamentoPorId(pensamentoId);
+        document.getElementById('pensamento-id').value = pensamento.id;
+        document.getElementById('pensamento-conteudo').value = pensamento.conteudo;
+        document.getElementById('pensamento-autoria').value = pensamento.autoria;
+    },
+
     async renderizarPensamentos() {
-        const listaPensamentos = document.getElementById("lista-pensamentos");
 
         try {
             const pensamentos = await api.buscarPensamentos();
@@ -31,10 +38,25 @@ const ui = {
         autoria.textContent = pensamento.autoria
         autoria.classList.add('pensamento-autoria')
 
+        const botaoEditar = document.createElement("button")
+        botaoEditar.classList.add('botao-editar')
+        botaoEditar.addEventListener('click', () => {
+            ui.preencherFormulario(pensamento.id)
+        })
+
+        const iconeEditar = document.createElement('img')
+        iconeEditar.src = "assets/imagens/icone-editar.png"
+        iconeEditar.alt = "Editar"
+        botaoEditar.appendChild(iconeEditar)
+
+        const icones = document.createElement('div')
+        icones.classList.add("icones")
+        icones.appendChild(botaoEditar)
+
         li.appendChild(iconeAspas)
         li.appendChild(texto)
         li.appendChild(autoria)
-
+        li.appendChild(icones)
         listaPensamentos.appendChild(li)
     },
     
