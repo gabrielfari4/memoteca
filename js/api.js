@@ -46,7 +46,18 @@ const api = {
             })
             return await response.json();
         } catch (error) {
-            alert("Houve um erro: ", error);
+            alert("Houve um erro ao editar o pensamento: ", error);
+            throw error;
+        }
+    },
+
+    async excluirPensamento(id) {
+        try {
+            const response = await fetch(`http://localhost:3000/pensamentos/${id}`,  {
+                method: "DELETE",
+            })
+        } catch (error) {
+            alert("Houve um erro ao excluir o pensamento: ", error);
             throw error;
         }
     }
