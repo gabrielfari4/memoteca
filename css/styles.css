@@ -201,6 +201,11 @@ h2, h3 {
   margin: 40px 0;
 }
 
+#lista-pensamentos-container div {
+  display: flex;
+  align-items: center;
+}
+
 #lista-pensamentos {
   list-style: none;
   padding: 0;
@@ -281,4 +286,18 @@ span {
   height: 1px;
   background: #041832;
   margin: 96px 0 48px 0;
+}
+
+#texto-vazio {
+  margin-bottom: 16px;
+  color: var(--Azul-Dark, #041832);
+  font-family: "Poppins", sans-serif;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+
+#imagem-vazio {
+  width: 100px;
 }

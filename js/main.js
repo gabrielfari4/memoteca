@@ -9,6 +9,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const cancelar = document.getElementById("botao-cancelar");
     cancelar.addEventListener("click", ui.limparFormulario);
+
 });
 
 const submissaoFormulario = async (event) => {

@@ -16,6 +16,9 @@ const ui = {
         try {
             const pensamentos = await api.buscarPensamentos();
             pensamentos.forEach(ui.adicionarPensamento);
+            if (pensamentos.length === 0) {
+                this.listaVazia()
+            }
         } catch (error) {
             alert("Erro: ", error);
         }
@@ -81,6 +84,28 @@ const ui = {
     
     limparFormulario() {
         document.getElementById('pensamento-form').reset();
+    },
+
+    listaVazia() {
+        const listaContainer = document.getElementById("lista-pensamentos-container");
+
+            const texto = document.createElement('p')
+            texto.id = 'texto-vazio'
+            texto.textContent = "Nada por aqui ainda, que tal compartilhar alguma ideia?"
+    
+            const imagem = document.createElement('img')
+            imagem.id = 'imagem-vazio'
+            imagem.src = "assets/imagens/lista-vazia.png"
+            imagem.alt = "Ícone caixa vazia"
+    
+            const vazio = document.createElement('div')
+            vazio.appendChild(texto)
+            vazio.appendChild(imagem)
+            vazio.style.display = 'flex'
+            vazio.style.flexDirection = 'column'
+    
+            listaContainer.appendChild(vazio)
+        
     }
 };
 
