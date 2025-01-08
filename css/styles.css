@@ -201,8 +201,9 @@ h2, h3 {
   margin: 40px 0;
 }
 
-#lista-pensamentos-container div {
+#lista-pensamentos-container .vazio-div {
   display: flex;
+  flex-direction: column;
   align-items: center;
 }
 
