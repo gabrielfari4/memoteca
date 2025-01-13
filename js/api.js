@@ -71,6 +71,21 @@ const api = {
             alert("Houve um erro ao excluir o pensamento: ", error);
             throw error;
         }
+    },
+
+    async buscarPensamentoPorTermo(termo) {
+        try {
+            const pensamentos = await this.buscarPensamentos();
+            const termoMinusculas = termo.toLowerCase();
+    
+            const pensamentosFiltrados = pensamentos.filter(pensamento => {
+                return (pensamento.conteudo.toLowerCase().includes(termoMinusculas)) || pensamento.autoria.toLowerCase().includes(termoMinusculas)
+            })
+            return pensamentosFiltrados;
+        } catch (error) {
+            alert("Erro ao filtrar pensamento: ", error.message)
+            throw error;
+        }
     }
 }
 
