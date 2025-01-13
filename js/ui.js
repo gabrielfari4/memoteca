@@ -10,14 +10,21 @@ const ui = {
             pensamento.autoria;
     },
 
-    async renderizarPensamentos() {
+    async renderizarPensamentos(pensamentosFiltrados = null) {
         const listaPensamentos = document.getElementById("lista-pensamentos");
         listaPensamentos.innerHTML = "";
 
         try {
-            const pensamentos = await api.buscarPensamentos();
-            pensamentos.forEach(ui.adicionarPensamento);
-            if (pensamentos.length === 0) {
+            let pensamentosParaRenderizar;
+
+            if (pensamentosFiltrados) {
+                pensamentosParaRenderizar = pensamentosFiltrados;
+            } else {
+                pensamentosParaRenderizar = await api.buscarPensamentos();
+            }
+
+            pensamentosParaRenderizar.forEach(ui.adicionarPensamento);
+            if (pensamentosParaRenderizar.length === 0) {
                 this.listaVazia();
             }
         } catch (error) {
@@ -71,8 +78,17 @@ const ui = {
         iconeExcluir.alt = "Excluir";
         botaoExcluir.appendChild(iconeExcluir);
 
+        const botaoFavorito = document.createElement("button");
+        botaoFavorito.classList.add("botao-favorito");
+        
+        const iconeFavorito = document.createElement("img");
+        iconeFavorito.src = pensamento.favorito ? "assets/imagens/icone-favorito.png" : "assets/imagens/icone-favorito_outline.png";
+        iconeFavorito.alt = "Favoritar";
+        botaoFavorito.appendChild(iconeFavorito);
+
         const icones = document.createElement("div");
         icones.classList.add("icones");
+        icones.appendChild(botaoFavorito);
         icones.appendChild(botaoEditar);
         icones.appendChild(botaoExcluir);
 
