@@ -4,10 +4,9 @@ const ui = {
     async preencherFormulario(pensamentoId) {
         const pensamento = await api.buscarPensamentoPorId(pensamentoId);
         document.getElementById("pensamento-id").value = pensamento.id;
-        document.getElementById("pensamento-conteudo").value =
-            pensamento.conteudo;
-        document.getElementById("pensamento-autoria").value =
-            pensamento.autoria;
+        document.getElementById("pensamento-conteudo").value = pensamento.conteudo;
+        document.getElementById("pensamento-autoria").value = pensamento.autoria;
+        document.getElementById("pensamento-data").value = pensamento.data;
     },
 
     async renderizarPensamentos(pensamentosFiltrados = null) {
@@ -50,6 +49,11 @@ const ui = {
         const autoria = document.createElement("div");
         autoria.textContent = pensamento.autoria;
         autoria.classList.add("pensamento-autoria");
+
+        const data = document.createElement("div");
+        const dataFormatada = pensamento.data.toLocaleDateString('pt-BR')
+        data.textContent = dataFormatada;
+        data.classList.add("pensamento-data");
 
         const botaoEditar = document.createElement("button");
         botaoEditar.classList.add("botao-editar");
@@ -103,6 +107,7 @@ const ui = {
         li.appendChild(iconeAspas);
         li.appendChild(texto);
         li.appendChild(autoria);
+        li.appendChild(data);
         li.appendChild(icones);
         listaPensamentos.appendChild(li);
     },

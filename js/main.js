@@ -22,6 +22,7 @@ const submissaoFormulario = async (event) => {
     const conteudo = document.getElementById("pensamento-conteudo").value;
     const autoria = document.getElementById("pensamento-autoria").value;
     const data = document.getElementById("pensamento-data").value
+    const favorito = false
 
     if (!validarData(data)) {
         alert("Não é permitido o cadastro de datas futuras. Selecione outra data.")
@@ -30,9 +31,9 @@ const submissaoFormulario = async (event) => {
 
     try {
         if (id) {
-            await api.editarPensamento({ id, conteudo, autoria, data });
+            await api.editarPensamento({ id, favorito, conteudo, autoria, data });
         } else {
-            await api.salvarPensamento({ conteudo, autoria, data });
+            await api.salvarPensamento({ favorito, conteudo, autoria, data });
         }
         ui.renderizarPensamentos();
     } catch (error) {
