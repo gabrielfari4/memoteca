@@ -4,31 +4,147 @@
       "id": "4c7d",
       "favorito": false,
       "conteudo": "Da vida reclama, mas sem ela não vive!",
-      "autoria": "Mestre Yoda"
+      "autoria": "Mestre Yoda",
+      "data": "2024-01-01T10:15:30.123Z"
     },
     {
       "id": "68uy",
-      "favorito": false,
+      "favorito": true,
       "conteudo": "Esse é de laranja que parece de limão, mas tem gosto de tamarindo!",
-      "autoria": "Chaves"
+      "autoria": "Chaves",
+      "data": "2024-02-15T08:45:10.456Z"
     },
     {
       "id": "b807",
-      "favorito": false,
+      "favorito": true,
       "conteudo": "Melhor professor, o fracasso é!",
-      "autoria": "Mestre Yoda"
+      "autoria": "Mestre Yoda",
+      "data": "2024-03-12T12:30:45.789Z"
     },
     {
       "id": "9f3c",
       "favorito": true,
       "conteudo": "Você não é todo mundo!",
-      "autoria": "Mãe"
+      "autoria": "Mãe",
+      "data": "2024-04-20T14:20:55.987Z"
     },
     {
       "id": "ddf2",
       "favorito": false,
       "conteudo": "Adiburai Naxumerus Abadinome",
-      "autoria": "Pastor Márcio Júnio"
+      "autoria": "Pastor Márcio Júnio",
+      "data": "2024-05-01T16:40:22.654Z"
+    },
+    {
+      "id": "1a2b",
+      "favorito": true,
+      "conteudo": "Seja a mudança que você deseja ver no mundo.",
+      "autoria": "Mahatma Gandhi",
+      "data": "2024-06-10T09:15:00.321Z"
+    },
+    {
+      "id": "3c4d",
+      "favorito": false,
+      "conteudo": "A felicidade só é real quando compartilhada.",
+      "autoria": "Christopher McCandless",
+      "data": "2024-07-22T07:25:33.999Z"
+    },
+    {
+      "id": "5e6f",
+      "favorito": true,
+      "conteudo": "Você é aquilo que pensa ser.",
+      "autoria": "Buda",
+      "data": "2024-08-03T18:05:10.111Z"
+    },
+    {
+      "id": "7g8h",
+      "favorito": false,
+      "conteudo": "O sucesso é a soma de pequenos esforços repetidos dia após dia.",
+      "autoria": "Robert Collier",
+      "data": "2024-09-12T13:50:44.222Z"
+    },
+    {
+      "id": "9i0j",
+      "favorito": true,
+      "conteudo": "Um caminho de mil milhas começa com um único passo.",
+      "autoria": "Lao-Tsé",
+      "data": "2024-10-01T21:35:00.444Z"
+    },
+    {
+      "id": "2k3l",
+      "favorito": false,
+      "conteudo": "A simplicidade é o último grau de sofisticação.",
+      "autoria": "Leonardo da Vinci",
+      "data": "2024-11-05T08:25:19.555Z"
+    },
+    {
+      "id": "4m5n",
+      "favorito": true,
+      "conteudo": "Aprenda com o ontem, viva o hoje e tenha esperança no amanhã.",
+      "autoria": "Albert Einstein",
+      "data": "2024-12-12T19:10:30.666Z"
+    },
+    {
+      "id": "6o7p",
+      "favorito": false,
+      "conteudo": "O amor é a força mais poderosa do universo.",
+      "autoria": "Desconhecido",
+      "data": "2025-01-07T11:15:45.777Z"
+    },
+    {
+      "id": "8q9r",
+      "favorito": true,
+      "conteudo": "Não existe um caminho para a felicidade. A felicidade é o caminho.",
+      "autoria": "Thich Nhat Hanh",
+      "data": "2025-02-15T23:40:55.888Z"
+    },
+    {
+      "id": "0s1t",
+      "favorito": false,
+      "conteudo": "O segredo da vida é cair sete vezes e levantar oito.",
+      "autoria": "Paulo Coelho",
+      "data": "2025-03-20T10:25:22.999Z"
+    },
+    {
+      "id": "2u3v",
+      "favorito": true,
+      "conteudo": "A melhor maneira de prever o futuro é criá-lo.",
+      "autoria": "Peter Drucker",
+      "data": "2025-04-15T12:00:00.123Z"
+    },
+    {
+      "id": "4w5x",
+      "favorito": false,
+      "conteudo": "A jornada é mais importante que o destino.",
+      "autoria": "Desconhecido",
+      "data": "2025-05-05T09:55:10.234Z"
+    },
+    {
+      "id": "6y7z",
+      "favorito": true,
+      "conteudo": "Tudo o que você sempre quis está do outro lado do medo.",
+      "autoria": "George Addair",
+      "data": "2025-06-12T14:35:20.345Z"
+    },
+    {
+      "id": "8a9b",
+      "favorito": false,
+      "conteudo": "Pense menos, viva mais.",
+      "autoria": "Desconhecido",
+      "data": "2025-07-22T17:45:30.456Z"
+    },
+    {
+      "id": "0c1d",
+      "favorito": true,
+      "conteudo": "A única coisa permanente é a mudança.",
+      "autoria": "Heráclito",
+      "data": "2025-08-10T20:10:40.567Z"
+    },
+    {
+      "id": "51d0",
+      "conteudo": "teste",
+      "autoria": "Teste",
+      "data": "2025-01-03"
     }
   ]
 }

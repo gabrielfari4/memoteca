@@ -85,6 +85,14 @@ const ui = {
         iconeFavorito.src = pensamento.favorito ? "assets/imagens/icone-favorito.png" : "assets/imagens/icone-favorito_outline.png";
         iconeFavorito.alt = "Favoritar";
         botaoFavorito.appendChild(iconeFavorito);
+        botaoFavorito.addEventListener("click", async () => {
+            try {
+                await api.atualizarFavorito(pensamento.id, !pensamento.favorito)
+                ui.renderizarPensamentos()
+            } catch (error) {
+                alert("Erro ao atualizar pensamento: ", error.message)
+            }
+        })
 
         const icones = document.createElement("div");
         icones.classList.add("icones");
