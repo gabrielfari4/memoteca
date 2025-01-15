@@ -141,65 +141,18 @@
       "data": "2025-08-10T20:10:40.567Z"
     },
     {
-      "id": "51d0",
-      "conteudo": "teste",
-      "autoria": "Teste",
-      "data": "2025-01-03"
-    },
-    {
-      "id": "5af8",
-      "conteudo": "novo teste",
-      "autoria": " data",
-      "data": "2025-02-03T00:00:00.000Z"
-    },
-    {
-      "id": "ecca",
-      "favorito": true,
-      "conteudo": "teste ",
-      "autoria": "favorito",
-      "data": "2025-02-04T00:00:00.000Z"
-    },
-    {
-      "id": "27fc",
+      "id": "266f",
       "favorito": false,
-      "conteudo": "novo teste",
-      "autoria": "favorito",
-      "data": "2025-01-01"
+      "conteudo": "Adiburai Naxumeros Abadinome",
+      "autoria": "Pastor Márcio Júnior",
+      "data": "2025-01-10T00:00:00.000Z"
     },
     {
-      "id": "07a2",
+      "id": "f0fd",
       "favorito": false,
-      "conteudo": "teste 2",
-      "autoria": "data",
-      "data": "2025-01-07T00:00:00.000Z"
-    },
-    {
-      "id": "b4c7",
-      "favorito": false,
-      "conteudo": "teste formato data",
-      "autoria": "data",
-      "data": "2025-01-08"
-    },
-    {
-      "id": "e772",
-      "favorito": false,
-      "conteudo": "teste formato2",
-      "autoria": "data",
-      "data": "Fri, 10 Jan 2025 00:00:00 GMT"
-    },
-    {
-      "id": "235f",
-      "favorito": false,
-      "conteudo": "teste formato3",
-      "autoria": "data",
-      "data": "2025-01-13T00:00:00.000Z"
-    },
-    {
-      "id": "4128",
-      "favorito": false,
-      "conteudo": "teste formato4",
-      "autoria": "data",
-      "data": "2025-01-12T00:00:00.000Z"
+      "conteudo": "If you get to hear me now",
+      "autoria": "Mestre Yoda",
+      "data": "2025-01-03T00:00:00.000Z"
     }
   ]
 }
