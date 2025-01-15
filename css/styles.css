@@ -130,7 +130,7 @@ h2, h3 {
   margin-top: 56px;
   width: 100%; 
   max-width: 600px; 
-  margin: 56px auto 0; 
+  margin: 56px auto; 
   padding: 0 16px; 
 }
 
@@ -231,10 +231,9 @@ h2, h3 {
 }
 
 #lista-pensamentos-container .vazio-div {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  display: none;
 }
+
 
 #lista-pensamentos {
   list-style: none;

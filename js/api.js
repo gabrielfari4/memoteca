@@ -36,7 +36,7 @@ const api = {
             }) 
             return await response.json(); */
             const data = converterString(pensamento.data)
-            const response = await axios.post(`${URL_BASE}/pensamentos`, { ...pensamento, data })
+            const response = await axios.post(`${URL_BASE}/pensamentos`, { ...pensamento, data: data.toISOString() })
             return await response.data;
         } catch (error) {
             alert("Houve um erro ao salvar pensamento: ", error);
@@ -71,10 +71,11 @@ const api = {
                 body: JSON.stringify(pensamento)
             })
             return await response.json(); */
-            const response = await axios.put(`${URL_BASE}/pensamentos/${pensamento.id}`, pensamento)
+            const data = converterString(pensamento.data)
+            const response = await axios.put(`${URL_BASE}/pensamentos/${pensamento.id}`, { ...pensamento, data: data.toISOString() })
             return await response.data;
         } catch (error) {
-            alert("Houve um erro ao editar o pensamento: ", error);
+            alert("Houve um erro ao editar o pensamento: ", error.message);
             throw error;
         }
     },
@@ -97,7 +98,7 @@ const api = {
             const termoMinusculas = termo.toLowerCase();
     
             const pensamentosFiltrados = pensamentos.filter(pensamento => {
-                return (pensamento.conteudo.toLowerCase().includes(termoMinusculas)) || pensamento.autoria.toLowerCase().includes(termoMinusculas)
+                return (pensamento.conteudo.toLowerCase().includes(termoMinusculas)) || pensamento.autoria.toLowerCase().includes(termoMinusculas) || pensamento.data.toISOString().includes(termoMinusculas)
             })
             return pensamentosFiltrados;
         } catch (error) {

@@ -6,7 +6,10 @@ const ui = {
         document.getElementById("pensamento-id").value = pensamento.id;
         document.getElementById("pensamento-conteudo").value = pensamento.conteudo;
         document.getElementById("pensamento-autoria").value = pensamento.autoria;
-        document.getElementById("pensamento-data").value = pensamento.data;
+        document.getElementById("pensamento-data").value = pensamento.data.toISOString().split("T")[0]
+        console.log(pensamento.data.toISOString().split("T")[0])
+        // document.getElementById("form-container").scrollIntoView()
+        window.scrollTo(0, 925);
     },
 
     async renderizarPensamentos(pensamentosFiltrados = null) {
@@ -23,8 +26,14 @@ const ui = {
             }
 
             pensamentosParaRenderizar.forEach(ui.adicionarPensamento);
-            if (pensamentosParaRenderizar.length === 0) {
-                this.listaVazia();
+            if (listaPensamentos.querySelectorAll("li").length === 0) {
+                const vazioDiv = document.querySelector(".vazio-div")
+                vazioDiv.style.display = "flex"
+                vazioDiv.style.alignItems = "center"
+                vazioDiv.style.flexDirection = "column"
+            } else {
+                const vazioDiv = document.querySelector(".vazio-div")
+                vazioDiv.style.display = "none"
             }
         } catch (error) {
             alert("Erro: ", error);
@@ -50,8 +59,16 @@ const ui = {
         autoria.textContent = pensamento.autoria;
         autoria.classList.add("pensamento-autoria");
 
+        let options = {
+            weekday: 'long',
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric',
+            timeZone: 'UTC'
+        }
+
         const data = document.createElement("div");
-        const dataFormatada = pensamento.data.toLocaleDateString('pt-BR')
+        const dataFormatada = pensamento.data.toLocaleDateString('pt-BR', options)
         data.textContent = dataFormatada;
         data.classList.add("pensamento-data");
 
@@ -114,29 +131,6 @@ const ui = {
 
     limparFormulario() {
         document.getElementById("pensamento-form").reset();
-    },
-
-    listaVazia() {
-        const listaContainer = document.getElementById(
-            "lista-pensamentos-container"
-        );
-
-        const texto = document.createElement("p");
-        texto.id = "texto-vazio";
-        texto.textContent =
-            "Nada por aqui ainda, que tal compartilhar alguma ideia?";
-
-        const imagem = document.createElement("img");
-        imagem.id = "imagem-vazio";
-        imagem.src = "assets/imagens/lista-vazia.png";
-        imagem.alt = "Ícone caixa vazia";
-
-        const vazio = document.createElement("div");
-        vazio.classList.add("vazio-div");
-        vazio.appendChild(texto);
-        vazio.appendChild(imagem);
-
-        listaContainer.appendChild(vazio);
     },
 };
 
