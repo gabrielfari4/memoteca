@@ -1,17 +1,32 @@
 import api from "./api.js";
 import ui from "./ui.js";
 
+const pensamentosSet = new Set();
+
+const adicionarChave = async () => {
+    try {
+        const pensamentos = await api.buscarPensamentos()
+        pensamentos.forEach(pensamento => {
+            const chavePensamento = `${pensamento.conteudo.trim().toLowerCase()}-${pensamento.autoria.trim().toLowerCase()}`
+            pensamentosSet.add(chavePensamento)
+        })
+    } catch (error) {
+        alert("Erro ao adicionar chave")
+    }
+}
+
+
 const removerEspacos = (string) => {
     return string.replaceAll(/\s+/g, '')
 }
 
-const regexConteudo = /^[A-z0-9áàãâéíóõôúç!,.:?'"()\s]{10,}$/
+const regexConteudo = /^[A-z0-9À-ÿ!,.:?'"()\s]{10,}$/
 
 const validarConteudo = (conteudo) => {
     return regexConteudo.test(conteudo)
 }
 
-const regexAutoria = /^[A-z0-9áàãâéíóõôúç\s]{3,25}$/
+const regexAutoria = /^[A-z0-9À-ÿ\s]{3,25}$/
 
 const validarAutoria = (autoria) => {
     return regexAutoria.test(autoria)
@@ -19,6 +34,7 @@ const validarAutoria = (autoria) => {
 
 document.addEventListener("DOMContentLoaded", () => {
     ui.renderizarPensamentos();
+    adicionarChave()
 
     const formulario = document.getElementById("pensamento-form");
     formulario.addEventListener("submit", submissaoFormulario);
@@ -54,6 +70,13 @@ const submissaoFormulario = async (event) => {
 
     if (!validarData(data)) {
         alert("Não é permitido o cadastro de datas futuras. Selecione outra data.")
+        return
+    }
+
+    const chaveNovoPensamento = `${conteudo.trim().toLowerCase()}-${autoria.trim().toLowerCase()}`
+
+    if (pensamentosSet.has(chaveNovoPensamento)) {
+        alert('Esse pensamento já existe!')
         return
     }
 
