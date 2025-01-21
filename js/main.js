@@ -5,13 +5,13 @@ const removerEspacos = (string) => {
     return string.replaceAll(/\s+/g, '')
 }
 
-const regexConteudo = /^[A-Za-z\s]{10,}$/
+const regexConteudo = /^[A-z0-9áàãâéíóõôúç!,.:?'"()\s]{10,}$/
 
 const validarConteudo = (conteudo) => {
     return regexConteudo.test(conteudo)
 }
 
-const regexAutoria = /^[A-Za-z\s]{3,25}$/
+const regexAutoria = /^[A-z0-9áàãâéíóõôúç\s]{3,25}$/
 
 const validarAutoria = (autoria) => {
     return regexAutoria.test(autoria)
